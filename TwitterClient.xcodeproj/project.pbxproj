@@ -68,7 +68,6 @@
 				F217A40B1F0B47BA00E18E9A /* Assets.xcassets */,
 				F217A4041F0B47BA00E18E9A /* AppDelegate.swift */,
 				F217A4101F0B47BA00E18E9A /* Info.plist */,
-				F2DD138F1F1156290053D2E8 /* JSONparser.swift */,
 			);
 			path = TwitterClient;
 			sourceTree = "<group>";
@@ -76,10 +75,10 @@
 		F2DD13861F11430A0053D2E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F217A4081F0B47BA00E18E9A /* Main.storyboard */,
 				F2DD13891F1145310053D2E8 /* User.swift */,
 				F2DD138B1F1145450053D2E8 /* Tweet.swift */,
 				F2DD13911F116DCA0053D2E8 /* tweet.json */,
+				F2DD138F1F1156290053D2E8 /* JSONparser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -87,6 +86,8 @@
 		F2DD13871F1143120053D2E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F217A4081F0B47BA00E18E9A /* Main.storyboard */,
+				F217A40D1F0B47BA00E18E9A /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -94,7 +95,6 @@
 		F2DD13881F11431A0053D2E8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F217A40D1F0B47BA00E18E9A /* LaunchScreen.storyboard */,
 				F217A4061F0B47BA00E18E9A /* ViewController.swift */,
 			);
 			name = Controller;

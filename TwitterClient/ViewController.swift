@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         
         JSONParser.tweetsFrom(data: JSONParser.sampleTweetData) { (success, allTweets) in
             guard let allTweets = allTweets else { return }
@@ -33,14 +34,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath as IndexPath, animated: true)
             print(indexPath.row)
-//            let row = indexPath.row
-        }
+    }
     
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath)
             
             let currentTweet = self.allTweets[indexPath.row]
-//            let row = indexPath.row
 
             cell.textLabel?.text = currentTweet.text
             cell.detailTextLabel?.text = currentTweet.id
