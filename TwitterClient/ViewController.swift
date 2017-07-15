@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.deselectRow(at: indexPath as IndexPath, animated: true)
             print(indexPath.row)
     }
-    
+ 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath)
             
