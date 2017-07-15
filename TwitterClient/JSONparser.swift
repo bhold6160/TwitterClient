@@ -8,7 +8,8 @@
 
 import Foundation
 
-typealias JSONParserCallBack = (Bool, [Tweet]?) -> ()
+typealias JSONParserCallback = (Bool, [Tweet]?) -> ()
+typealias JSONParserUserCallback = (Bool, User?) -> ()
 
 class JSONParser {
     static var sampleTweetData : Data {
@@ -23,7 +24,7 @@ class JSONParser {
             }
         }
     
-    class func tweetsFrom(data: Data, callback: JSONParserCallBack) {
+    class func tweetsFrom(data: Data, callback: JSONParserCallback) {
         do {
             if let rootObject = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String: Any]] {
          
@@ -41,9 +42,15 @@ class JSONParser {
         }
     }
     
-    class func fromUser(data: Data, callback: JSONParserCallBack) {
+    class func fromUser(data: Data, callback: JSONParserUserCallback) {
         do {
-            if let 
+            if let userJSON = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                let currentUser = User(json: userJSON)
+                print("")
+                callback(true, currentUser)
+            }
+        } catch {
+            print("Error")
         }
     }
     

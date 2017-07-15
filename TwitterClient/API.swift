@@ -76,7 +76,7 @@ class API {
             
             switch response.statusCode {
             case 200...299:
-                print("Success!")
+                print("Authorization Successful!")
                 JSONParser.fromUser(data: data, callback: { (success, currentUser) in
                     completion(currentUser)
             })
