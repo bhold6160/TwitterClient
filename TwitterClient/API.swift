@@ -12,6 +12,7 @@ import Social
 
 typealias AccountsCompletion = (ACAccount?) -> ()
 typealias TweetsCompletion = ([Tweet]?) -> ()
+typealias UserCompletion = (User?) -> ()
 
 class API {
     
@@ -44,6 +45,49 @@ class API {
             print("No error, but success is FALSE")
             completion(nil)
         }
+    }
+    
+    func getOAuthUser(completion: @escaping UserCompletion) {
+        let url = URL(string: "https://api.twitter.com/1.1/account/verify_credentials.json")
+        
+        let request = SLRequest(forServiceType: SLServiceTypeTwitter,
+                                requestMethod: .GET,
+                                url: url,
+                                parameters: nil)
+        
+        request?.account = self.account
+        
+        request?.perform(handler:{ (data, response, error) in
+            if error != nil {
+                print("Erro Authenticating User: \(error!.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let response = response else {
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            
+            switch response.statusCode {
+            case 200...299:
+                print("Success!")
+                JSONParser.fromUser(data: data, callback: { (success, currentUser) in
+                    completion(currentUser)
+            })
+            case 400...499:
+                print("Client-side error, this is our fault... \(response.statusCode)")
+            case 500...599:
+                print("Server-side error, this is NOT our fault! \(response.statusCode)")
+            default:
+                print("Unrecognixed Status Code: \(response.statusCode)")
+            }
+        })
     }
     
     private func updateTimeline(completion: @escaping TweetsCompletion) {

@@ -40,4 +40,12 @@ class JSONParser {
             print(error)
         }
     }
+    
+    class func fromUser(data: Data, callback: JSONParserCallBack) {
+        do {
+            if let 
+        }
+    }
+    
+    
 }
