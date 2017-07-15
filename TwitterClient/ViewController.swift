@@ -44,10 +44,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let currentTweet = self.allTweets[indexPath.row]
 
-            cell.textLabel?.text = currentTweet.text
-            cell.detailTextLabel?.numberOfLines = 2
+            
+            cell.detailTextLabel?.numberOfLines = 0
+            
+            cell.textLabel?.text = currentTweet.user?.name
             cell.detailTextLabel?.text = currentTweet.id
-            cell.detailTextLabel?.text = currentTweet.user?.name
+            cell.detailTextLabel?.text = currentTweet.text
             
             return cell
         }

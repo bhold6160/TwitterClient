@@ -44,9 +44,9 @@ class JSONParser {
     
     class func fromUser(data: Data, callback: JSONParserUserCallback) {
         do {
-            if let userJSON = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                let currentUser = User(json: userJSON)
-                print("")
+            if let userAuth = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                let currentUser = User(json: userAuth)
+                print("Recieved serialized user data")
                 callback(true, currentUser)
             }
         } catch {
