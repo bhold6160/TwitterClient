@@ -19,11 +19,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-        JSONParser.tweetsFrom(data: JSONParser.sampleTweetData) { (success, allTweets) in
-            guard let allTweets = allTweets else { return }
-            
-            self.allTweets = allTweets
+    
+        API.shared.getTweets { (tweets) in
+            if let tweets = tweets {
+                OperationQueue.main.addOperation {
+                self.allTweets = tweets
+                self.tableView.reloadData()
+                }
+            }
         }
     }
 
@@ -46,5 +49,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             return cell
         }
-
 }
