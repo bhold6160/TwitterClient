@@ -13,8 +13,6 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailView: UIViewController!
     
-    var singleTweet: Tweet!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
