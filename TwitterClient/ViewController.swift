@@ -38,7 +38,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath)
             
             let currentTweet = self.allTweets[indexPath.row]
-
             
             cell.detailTextLabel?.numberOfLines = 0
             
