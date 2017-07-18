@@ -33,11 +33,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return allTweets.count
         }
-    
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-            print(indexPath.row)
-    }
  
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath)
@@ -53,4 +48,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             return cell
         }
+    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+            performSegue(withIdentifier: "detailSegue", sender: allTweets[indexPath.row])
+        }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let detailTweet = segue.destination as UIViewController
+//        
+//        detailTweet.
+//    }
 }
