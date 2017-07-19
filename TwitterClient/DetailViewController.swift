@@ -9,9 +9,6 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
-    
-//    @IBOutlet weak var detailView: UIViewController!
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
@@ -21,10 +18,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tweetLabel.numberOfLines = 0
+        
         self.usernameLabel.text = selectedTweet.user?.name
         self.tweetLabel.text = selectedTweet.text
-        
-        
-        print("DETAILVIEW CONTROLLER GOT THE FOLLOWING TWEET")
     }
 }
