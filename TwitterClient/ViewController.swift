@@ -20,6 +20,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.dataSource = self
         self.tableView.delegate = self
     
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 75
+        
         API.shared.getTweets { (tweets) in
             if let tweets = tweets {
                 OperationQueue.main.addOperation {
@@ -35,15 +38,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
  
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
             
             let currentTweet = self.allTweets[indexPath.row]
             
-            cell.detailTextLabel?.numberOfLines = 0
-            
-            cell.textLabel?.text = currentTweet.user?.name
-            cell.detailTextLabel?.text = currentTweet.id
-            cell.detailTextLabel?.text = currentTweet.text
+            cell.usernameLabel.text = currentTweet.user?.name
+            cell.tweetLabel.text = currentTweet.text
             
             return cell
         }
@@ -59,3 +59,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        detailTweet.
 //    }
 }
+
+
+
+
+
+
+
+
+
+

@@ -85,7 +85,7 @@ class API {
             case 500...599:
                 print("Server-side error, this is NOT our fault! \(response.statusCode)")
             default:
-                print("Unrecognixed Status Code: \(response.statusCode)")
+                print("Unrecognized Status Code: \(response.statusCode)")
             }
         })
     }
