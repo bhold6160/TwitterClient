@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var allTweets = [Tweet]()
 
@@ -19,7 +20,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-    
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 75
         
@@ -28,6 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 OperationQueue.main.addOperation {
                 self.allTweets = tweets
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
                 }
             }
         }
@@ -50,14 +51,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-            performSegue(withIdentifier: "detailSegue", sender: allTweets[indexPath.row])
+//            performSegue(withIdentifier: "detailSegue", sender: allTweets[indexPath.row])
         }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let detailTweet = segue.destination as UIViewController
-//        
-//        detailTweet.
-//    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "detailSegue" {
+            if let selectedIndex = self.tableView.indexPathForSelectedRow {
+                let selectedTweet = self.allTweets[selectedIndex.row]
+                
+                if let destinationController = segue.destination as? DetailViewController {
+                    destinationController.selectedTweet = selectedTweet
+                }
+            }
+        }
+    }
 }
 
 
