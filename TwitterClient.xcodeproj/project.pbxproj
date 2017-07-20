@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F20C486D1F2049B70062AAC1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20C486C1F2049B70062AAC1 /* ProfileViewController.swift */; };
 		F217A4051F0B47BA00E18E9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F217A4041F0B47BA00E18E9A /* AppDelegate.swift */; };
 		F217A4071F0B47BA00E18E9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F217A4061F0B47BA00E18E9A /* ViewController.swift */; };
 		F217A40A1F0B47BA00E18E9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F217A4081F0B47BA00E18E9A /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F20C486C1F2049B70062AAC1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F217A4011F0B47BA00E18E9A /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F217A4041F0B47BA00E18E9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F217A4061F0B47BA00E18E9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				F217A4061F0B47BA00E18E9A /* ViewController.swift */,
 				F28A08C71F1DB8BB002335CA /* DetailViewController.swift */,
+				F20C486C1F2049B70062AAC1 /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				F217A4051F0B47BA00E18E9A /* AppDelegate.swift in Sources */,
 				F2DD138A1F1145310053D2E8 /* User.swift in Sources */,
 				F2DD13941F15C70B0053D2E8 /* API.swift in Sources */,
+				F20C486D1F2049B70062AAC1 /* ProfileViewController.swift in Sources */,
 				F28A08C81F1DB8BB002335CA /* DetailViewController.swift in Sources */,
 				F2DD138C1F1145450053D2E8 /* Tweet.swift in Sources */,
 			);

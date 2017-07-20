@@ -52,7 +52,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-//            performSegue(withIdentifier: "detailSegue", sender: allTweets[indexPath.row])
         }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

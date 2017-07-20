@@ -135,13 +135,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vY-mm-fRt">
-                                        <rect key="frame" x="167" y="141" width="42" height="21"/>
+                                        <rect key="frame" x="8" y="117" width="359" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqk-X5-j6V">
-                                        <rect key="frame" x="167" y="269" width="42" height="21"/>
+                                        <rect key="frame" x="325" y="159" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -149,12 +149,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="qqk-X5-j6V" firstAttribute="centerY" secondItem="frx-Aa-BBZ" secondAttribute="centerY" id="A2h-3f-Rid"/>
-                                    <constraint firstItem="4vY-mm-fRt" firstAttribute="centerY" secondItem="frx-Aa-BBZ" secondAttribute="centerY" constant="-128" id="K8o-hP-zlb"/>
+                                    <constraint firstItem="qqk-X5-j6V" firstAttribute="centerY" secondItem="frx-Aa-BBZ" secondAttribute="centerY" constant="-110" id="A2h-3f-Rid"/>
+                                    <constraint firstItem="4vY-mm-fRt" firstAttribute="centerY" secondItem="frx-Aa-BBZ" secondAttribute="centerY" constant="-152" id="K8o-hP-zlb"/>
+                                    <constraint firstItem="4vY-mm-fRt" firstAttribute="leading" secondItem="frx-Aa-BBZ" secondAttribute="leading" constant="8" id="Kmm-Su-K7r"/>
                                     <constraint firstItem="sSq-5s-dGX" firstAttribute="centerX" secondItem="frx-Aa-BBZ" secondAttribute="centerX" id="Uhy-AZ-1wu"/>
-                                    <constraint firstItem="4vY-mm-fRt" firstAttribute="centerX" secondItem="frx-Aa-BBZ" secondAttribute="centerX" id="WqQ-iX-CuD"/>
-                                    <constraint firstItem="4vY-mm-fRt" firstAttribute="centerX" secondItem="frx-Aa-BBZ" secondAttribute="centerX" id="YGI-Mc-Fny"/>
-                                    <constraint firstItem="qqk-X5-j6V" firstAttribute="centerX" secondItem="frx-Aa-BBZ" secondAttribute="centerX" id="fgQ-FE-fce"/>
+                                    <constraint firstAttribute="trailing" secondItem="4vY-mm-fRt" secondAttribute="trailing" constant="8" id="d0Q-ww-ICB"/>
+                                    <constraint firstItem="qqk-X5-j6V" firstAttribute="centerX" secondItem="frx-Aa-BBZ" secondAttribute="centerX" constant="158.5" id="fgQ-FE-fce"/>
                                     <constraint firstItem="sSq-5s-dGX" firstAttribute="top" secondItem="frx-Aa-BBZ" secondAttribute="top" constant="50" id="zuJ-Ys-qBH"/>
                                 </constraints>
                             </view>
