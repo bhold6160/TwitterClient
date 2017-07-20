@@ -12,6 +12,7 @@ class TweetCell: UITableViewCell {
 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var retweetLabel: UILabel!
 
     
 }

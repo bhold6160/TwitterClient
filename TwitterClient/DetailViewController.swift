@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var retweetLabel: UILabel!
     
     var selectedTweet: Tweet!
     
@@ -22,5 +23,6 @@ class DetailViewController: UIViewController {
         
         self.usernameLabel.text = selectedTweet.user?.name
         self.tweetLabel.text = selectedTweet.text
+        self.retweetLabel.text = "\(selectedTweet.retweet_count)"
     }
 }

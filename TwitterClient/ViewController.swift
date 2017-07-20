@@ -45,6 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             cell.usernameLabel.text = currentTweet.user?.name
             cell.tweetLabel.text = currentTweet.text
+            cell.retweetLabel.text = "\(currentTweet.retweet_count)"
             
             return cell
         }
