@@ -22,6 +22,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        let nib = UINib(nibName: "TweetCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "tweetCell")
+        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 75
         
@@ -45,14 +49,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let currentTweet = self.allTweets[indexPath.row]
             
-            cell.usernameLabel.text = currentTweet.user?.name
-            cell.tweetLabel.text = currentTweet.text
-            cell.retweetLabel.text = "\(currentTweet.retweet_count)"
+//            cell.usernameLabel.text = currentTweet.user?.name
+//            cell.tweetLabel.text = currentTweet.text
+//            cell.retweetLabel.text = "\(currentTweet.retweet_count)"
+ 
+            cell.tweet = currentTweet
             
             return cell
         }
     
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            performSegue(withIdentifier: "detailSegue", sender: nil)
             tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         }
 

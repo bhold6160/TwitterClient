@@ -26,8 +26,8 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="So0-zp-JkD" customClass="tweetCell">
-                        <rect key="frame" x="88" y="8" width="125.5" height="33.5"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <rect key="frame" x="88" y="8" width="101" height="26.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -64,7 +64,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="retweetLabel" destination="NGN-bu-CzA" id="eLh-Vm-Dyz"/>
+                <outlet property="retweetLabel" destination="NGN-bu-CzA" id="NTG-nC-6W1"/>
                 <outlet property="tweetLabel" destination="BMC-2r-f7D" id="dok-Fi-JVm"/>
                 <outlet property="userProfileImage" destination="6W4-LL-7Cb" id="7T6-BU-Qdn"/>
                 <outlet property="usernameLabel" destination="So0-zp-JkD" id="edG-MT-rb5"/>
