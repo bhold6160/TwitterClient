@@ -9,10 +9,20 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    
 
+    var selectedUser: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        API.shared.getOAuthUser { _ in (User?)
+        API.shared.getOAuthUser { (userProfile) in
+            if let userProfile = userProfile {
+                OperationQueue.main.addOperation {
+                    self.selectedUser = userProfile
+                }
+            }
+        }
     }
 }

@@ -12,15 +12,19 @@ class User {
     let name: String
     let profileImageUrl: String
     let location: String
+    let screenName: String
     
     init?(json: [String: Any]) {
         if let name = json["name"] as? String,
             let profileImageUrl = json["profile_image_url"] as? String,
-            let location = json["location"] as? String {
+            let location = json["location"] as? String,
+            let screenName = json["screen_name"] as? String {
         
             self.name = name
             self.profileImageUrl = profileImageUrl
             self.location = location
+            self.screenName = screenName
+            
     } else {
         return nil
         }

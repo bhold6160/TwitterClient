@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func profileViewButton(_ sender: Any) {
+    }
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var allTweets = [Tweet]()
