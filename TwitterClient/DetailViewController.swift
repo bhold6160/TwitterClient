@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
         
         self.usernameLabel.text = selectedTweet.user?.name
         self.tweetLabel.text = selectedTweet.text
-        self.retweetLabel.text = "\(selectedTweet.retweet_count)"
+        self.retweetLabel.text = "Retweets: \(selectedTweet.retweet_count)"
         
         if let user = selectedTweet.user {
         UIImage.fetchImageWith(urlString: user.profileImageUrl, completion: {
