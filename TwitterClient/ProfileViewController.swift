@@ -23,19 +23,18 @@ class ProfileViewController: UIViewController {
             if let userProfile = userProfile {
                 OperationQueue.main.addOperation {
                     self.selectedUser = userProfile
+                    
+                    if let user = self.selectedUser {
+                        self.usernameLabel.text = self.selectedUser.name
+                        
+                        UIImage.fetchImageWith(urlString: user.profileImageUrl, completion: {
+                            (userProfileImage) in
+                            self.userProfileImage.layer.cornerRadius = 10
+                            self.userProfileImage.image = userProfileImage
+                        })
+                    }
                 }
             }
-        }
-    
-    
-    if let user = selectedUser {
-        self.usernameLabel.text = selectedUser.name
-        
-        UIImage.fetchImageWith(urlString: user.profileImageUrl, completion: {
-            (userProfileImage) in
-            self.userProfileImage.layer.cornerRadius = 10
-            self.userProfileImage.image = userProfileImage
-            })
         }
     }
 }
