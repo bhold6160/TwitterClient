@@ -10,6 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet var userProfileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var retweetLabel: UILabel!
@@ -24,5 +25,13 @@ class DetailViewController: UIViewController {
         self.usernameLabel.text = selectedTweet.user?.name
         self.tweetLabel.text = selectedTweet.text
         self.retweetLabel.text = "\(selectedTweet.retweet_count)"
+        
+        if let user = selectedTweet.user {
+        UIImage.fetchImageWith(urlString: user.profileImageUrl, completion: {
+            (userProfileImage) in
+//            self.userProfileImage.layer.cornerRadius = 10
+            self.userProfileImage.image = userProfileImage
+            })
+        }
     }
 }
