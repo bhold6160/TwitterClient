@@ -59,7 +59,7 @@ class API {
         
         request?.perform(handler:{ (data, response, error) in
             if error != nil {
-                print("Erro Authenticating User: \(error!.localizedDescription)")
+                print("Error Authenticating User: \(error!.localizedDescription)")
                 completion(nil)
                 return
             }
