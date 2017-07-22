@@ -48,10 +48,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
             
             let currentTweet = self.allTweets[indexPath.row]
-            
-//            cell.usernameLabel.text = currentTweet.user?.name
-//            cell.tweetLabel.text = currentTweet.text
-//            cell.retweetLabel.text = "\(currentTweet.retweet_count)"
  
             cell.tweet = currentTweet
             

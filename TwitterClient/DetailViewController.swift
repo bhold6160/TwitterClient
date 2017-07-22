@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
         if let user = selectedTweet.user {
         UIImage.fetchImageWith(urlString: user.profileImageUrl, completion: {
             (userProfileImage) in
-//            self.userProfileImage.layer.cornerRadius = 10
+            self.userProfileImage.layer.cornerRadius = 10
             self.userProfileImage.image = userProfileImage
             })
         }
