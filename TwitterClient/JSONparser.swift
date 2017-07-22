@@ -10,6 +10,7 @@ import Foundation
 
 typealias JSONParserCallback = (Bool, [Tweet]?) -> ()
 typealias JSONParserUserCallback = (Bool, User?) -> ()
+typealias JSONParserRetweet = (Bool, Tweet?) -> ()
 
 class JSONParser {
     static var sampleTweetData : Data {
@@ -54,5 +55,15 @@ class JSONParser {
         }
     }
     
-    
+    class func numberOfRetweets(data: Data, callback: JSONParserRetweet) {
+        do {
+            if let retweetCount = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                let currentCount = Tweet(json: retweetCount)
+                print("Recieved retweet count")
+                callback(true, currentCount)
+            }
+        } catch {
+            print("Error")
+        }
+    }
 }

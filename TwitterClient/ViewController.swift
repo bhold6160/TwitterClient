@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func profileViewButton(_ sender: Any) {
+    }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var allTweets = [Tweet]()
 
@@ -19,12 +22,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-    
+        
+        let nib = UINib(nibName: "TweetCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "tweetCell")
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 75
+        
         API.shared.getTweets { (tweets) in
             if let tweets = tweets {
                 OperationQueue.main.addOperation {
                 self.allTweets = tweets
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
                 }
             }
         }
@@ -35,27 +45,44 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
  
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
             
             let currentTweet = self.allTweets[indexPath.row]
             
-            cell.detailTextLabel?.numberOfLines = 0
-            
-            cell.textLabel?.text = currentTweet.user?.name
-            cell.detailTextLabel?.text = currentTweet.id
-            cell.detailTextLabel?.text = currentTweet.text
+//            cell.usernameLabel.text = currentTweet.user?.name
+//            cell.tweetLabel.text = currentTweet.text
+//            cell.retweetLabel.text = "\(currentTweet.retweet_count)"
+ 
+            cell.tweet = currentTweet
             
             return cell
         }
     
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            performSegue(withIdentifier: "detailSegue", sender: nil)
             tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-            performSegue(withIdentifier: "detailSegue", sender: allTweets[indexPath.row])
         }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let detailTweet = segue.destination as UIViewController
-//        
-//        detailTweet.
-//    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "detailSegue" {
+            if let selectedIndex = self.tableView.indexPathForSelectedRow {
+                let selectedTweet = self.allTweets[selectedIndex.row]
+                
+                if let destinationController = segue.destination as? DetailViewController {
+                    destinationController.selectedTweet = selectedTweet
+                }
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
