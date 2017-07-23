@@ -95,14 +95,14 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pjv-0i-2BM">
-                                        <rect key="frame" x="8" y="8" width="80" height="80"/>
+                                        <rect key="frame" x="8" y="8" width="60" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="EKH-u5-2ys"/>
-                                            <constraint firstAttribute="height" constant="80" id="Vyf-5m-P2h"/>
+                                            <constraint firstAttribute="width" constant="60" id="EKH-u5-2ys"/>
+                                            <constraint firstAttribute="height" constant="60" id="Vyf-5m-P2h"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPX-su-qKA">
-                                        <rect key="frame" x="96" y="8" width="79" height="21"/>
+                                        <rect key="frame" x="76" y="8" width="79" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -114,7 +114,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGe-Tb-osY">
-                                        <rect key="frame" x="8" y="96" width="359" height="89"/>
+                                        <rect key="frame" x="8" y="76" width="359" height="109"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -173,14 +173,14 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GWb-IS-WWd">
-                                        <rect key="frame" x="8" y="8" width="80" height="80"/>
+                                        <rect key="frame" x="8" y="8" width="60" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="Tpi-1a-zUg"/>
-                                            <constraint firstAttribute="height" constant="80" id="m9p-H2-lbS"/>
+                                            <constraint firstAttribute="width" constant="60" id="Tpi-1a-zUg"/>
+                                            <constraint firstAttribute="height" constant="60" id="m9p-H2-lbS"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcl-oE-t80">
-                                        <rect key="frame" x="96" y="8" width="79" height="21"/>
+                                        <rect key="frame" x="76" y="8" width="79" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SR7-jI-Mux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7330" y="-745"/>
+            <point key="canvasLocation" x="-7330.3999999999996" y="-745.27736131934034"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oit-He-EGe">
