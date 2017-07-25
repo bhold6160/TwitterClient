@@ -79,6 +79,39 @@
             </objects>
             <point key="canvasLocation" x="-8116" y="-412.44377811094455"/>
         </scene>
+        <!--User Timeline View Controller-->
+        <scene sceneID="tiW-Ul-KDo">
+            <objects>
+                <viewController id="dVb-Fh-ox9" customClass="UserTimelineViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q4f-yd-kd0"/>
+                        <viewControllerLayoutGuide type="bottom" id="iEB-cH-fQ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CKR-O9-por">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tto-yu-QeC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tto-yu-QeC" secondAttribute="trailing" id="8h9-Qb-taO"/>
+                            <constraint firstItem="tto-yu-QeC" firstAttribute="top" secondItem="CKR-O9-por" secondAttribute="top" constant="64" id="FLr-Jk-2GC"/>
+                            <constraint firstItem="tto-yu-QeC" firstAttribute="leading" secondItem="CKR-O9-por" secondAttribute="leading" id="Uy9-1N-YLO"/>
+                            <constraint firstItem="iEB-cH-fQ3" firstAttribute="top" secondItem="tto-yu-QeC" secondAttribute="bottom" id="w2h-KJ-5mE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userTimelineView" destination="tto-yu-QeC" id="HHW-uK-SiD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ml-R9-L5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6578.5" y="-90.5"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="BKv-TC-LqK">
             <objects>
@@ -145,7 +178,18 @@
                             <constraint firstItem="frx-Aa-BBZ" firstAttribute="top" secondItem="Coc-yT-kGg" secondAttribute="bottom" id="lkp-hc-sog"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NQi-Gx-aYM"/>
+                    <navigationItem key="navigationItem" id="NQi-Gx-aYM">
+                        <barButtonItem key="rightBarButtonItem" id="6kc-A6-ezk">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EWp-96-p3a">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Feed"/>
+                                <connections>
+                                    <segue destination="dVb-Fh-ox9" kind="show" identifier="userTimelineSegue" id="ro5-YK-k7S"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="retweetLabel" destination="xda-Q5-Hhp" id="AbJ-hN-IIk"/>
                         <outlet property="tweetLabel" destination="DGe-Tb-osY" id="hFa-lE-oe5"/>
