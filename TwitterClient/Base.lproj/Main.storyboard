@@ -224,7 +224,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcl-oE-t80">
-                                        <rect key="frame" x="76" y="8" width="79" height="21"/>
+                                        <rect key="frame" x="102" y="47" width="79" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -233,9 +233,9 @@
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="GWb-IS-WWd" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="top" constant="8" id="0J9-RN-QHM"/>
-                                    <constraint firstItem="wcl-oE-t80" firstAttribute="leading" secondItem="GWb-IS-WWd" secondAttribute="trailing" constant="8" id="Dyr-92-jUc"/>
+                                    <constraint firstItem="wcl-oE-t80" firstAttribute="leading" secondItem="GWb-IS-WWd" secondAttribute="trailing" constant="34" id="Dyr-92-jUc"/>
                                     <constraint firstItem="GWb-IS-WWd" firstAttribute="leading" secondItem="91j-eB-vJI" secondAttribute="leading" constant="8" id="gMW-Z4-oz4"/>
-                                    <constraint firstItem="wcl-oE-t80" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="top" constant="8" id="hNE-yX-ECn"/>
+                                    <constraint firstItem="wcl-oE-t80" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="top" constant="47" id="hNE-yX-ECn"/>
                                 </constraints>
                             </view>
                         </subviews>

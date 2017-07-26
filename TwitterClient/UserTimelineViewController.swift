@@ -12,16 +12,12 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
 
     @IBOutlet weak var userTimelineView: UITableView!
     
-    
     var userTimeline: Tweet!
     
     var allTweets = [Tweet]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let nib = UINib(nibName: "TweetCell", bundle: nil)
-//        self.tableView.register(nib, forCellReuseIdentifier: "tweetCell")
     
         API.shared.getTweetsFor(username: userTimeline.user?.screenName, completion: { (userTweets) in
             if let userTweets = userTweets {
@@ -46,16 +42,16 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        if segue.identifier == "userViewSegue" {
-            if let selectedIndex = self.tableView.indexPathForSelectedRow {
-                let selectedTweet = self.allTweets[selectedIndex.row]
-                
-                if let destinationController = segue.destination as? UserTimelineViewController {
-                    destinationController.selectedTweet = selectedTweet
-                }
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//        if segue.identifier == "userViewSegue" {
+//            if let selectedIndex = self.tableView.indexPathForSelectedRow {
+//                let selectedTweet = self.allTweets[selectedIndex.row]
+//                
+//                if let destinationController = segue.destination as? UserTimelineViewController {
+//                    destinationController.selectedTweet = selectedTweet
+//                }
+//            }
+//        }
+//    }
 }
