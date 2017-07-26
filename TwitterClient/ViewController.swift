@@ -20,8 +20,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(API.shared.test)
-        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
@@ -69,6 +67,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 if let destinationController = segue.destination as? DetailViewController {
                     destinationController.selectedTweet = selectedTweet
+                    
                 }
             }
         }
