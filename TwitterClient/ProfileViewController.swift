@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     
     var selectedUser: User!
     var selectedUserTweets: Tweet!
-     var allTweets = [Tweet]()
+    var allTweets = [Tweet]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +60,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allTweets.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

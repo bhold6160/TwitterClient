@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var allTweets = [Tweet]()
+    var selectedUserTweets: Tweet!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,13 +68,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 if let destinationController = segue.destination as? DetailViewController {
                     destinationController.selectedTweet = selectedTweet
-                    
                 }
             }
         }
         
         if segue.identifier == "profileSegue" {
             if let destinationController = segue.destination as? ProfileViewController {
+                destinationController.selectedUserTweets = self.selectedUserTweets
                 destinationController.allTweets = self.allTweets
             }
         }

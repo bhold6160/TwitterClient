@@ -13,7 +13,6 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var userTimelineView: UITableView!
     
     var userTimeline: Tweet!
-    
     var allTweets = [Tweet]()
     
     override func viewDidLoad() {
