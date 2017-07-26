@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserTimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class UserTimelineViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var userTimelineView: UITableView!
     
@@ -18,11 +18,21 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        API.shared.getTweetsFor(username: userTimeline.user?.screenName, completion: { (userTweets) in
+        
+        self.userTimelineView.dataSource = self
+        
+        let nib = UINib(nibName: "TweetCell", bundle: nil)
+        self.userTimelineView.register(nib, forCellReuseIdentifier: "tweetCell")
+        
+        self.userTimelineView.rowHeight = UITableViewAutomaticDimension
+        self.userTimelineView.estimatedRowHeight = 75
+        
+        print(API.shared.test)
+        API.shared.getTweetsFor(username: userTimeline.user!.screenName, completion: { (userTweets) in
             if let userTweets = userTweets {
                 OperationQueue.main.addOperation {
                     self.allTweets = userTweets
+                    self.userTimelineView.reloadData()
                 }
             }
         })
@@ -41,17 +51,8 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
         
         return cell
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        super.prepare(for: segue, sender: sender)
-//        if segue.identifier == "userViewSegue" {
-//            if let selectedIndex = self.tableView.indexPathForSelectedRow {
-//                let selectedTweet = self.allTweets[selectedIndex.row]
-//                
-//                if let destinationController = segue.destination as? UserTimelineViewController {
-//                    destinationController.selectedTweet = selectedTweet
-//                }
-//            }
-//        }
-//    }
 }
+
+
+
+

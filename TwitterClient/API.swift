@@ -19,6 +19,7 @@ class API {
     static let shared = API()
     
     var account : ACAccount?
+    var test = "Brandon"
     
     private init() {}
     
