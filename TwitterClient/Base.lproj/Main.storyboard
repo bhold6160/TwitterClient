@@ -214,7 +214,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91j-eB-vJI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="96"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GWb-IS-WWd">
                                         <rect key="frame" x="8" y="8" width="60" height="60"/>
@@ -238,17 +238,26 @@
                                     <constraint firstItem="wcl-oE-t80" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="top" constant="47" id="hNE-yX-ECn"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dWt-tH-9vd">
+                                <rect key="frame" x="0.0" y="160" width="375" height="463"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="91j-eB-vJI" secondAttribute="trailing" id="7cb-qn-6HB"/>
                             <constraint firstItem="91j-eB-vJI" firstAttribute="top" secondItem="G4L-cZ-9NK" secondAttribute="bottom" id="EYe-3h-hyH"/>
                             <constraint firstItem="91j-eB-vJI" firstAttribute="leading" secondItem="uKJ-we-e8H" secondAttribute="leading" id="K2U-0T-P45"/>
-                            <constraint firstItem="8uX-8b-xpc" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="bottom" id="uGB-WR-Qh1"/>
+                            <constraint firstItem="dWt-tH-9vd" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="bottom" id="K60-2B-Qsx"/>
+                            <constraint firstItem="8uX-8b-xpc" firstAttribute="top" secondItem="dWt-tH-9vd" secondAttribute="bottom" id="RdZ-4H-XgM"/>
+                            <constraint firstItem="dWt-tH-9vd" firstAttribute="leading" secondItem="uKJ-we-e8H" secondAttribute="leading" id="kjE-Up-YO7"/>
+                            <constraint firstAttribute="trailing" secondItem="dWt-tH-9vd" secondAttribute="trailing" id="sWC-TQ-Wkr"/>
+                            <constraint firstItem="8uX-8b-xpc" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="bottom" constant="463" id="uGB-WR-Qh1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="userProfileImage" destination="GWb-IS-WWd" id="g58-UQ-7jv"/>
+                        <outlet property="userTweetTable" destination="dWt-tH-9vd" id="dK4-WT-m9R"/>
                         <outlet property="usernameLabel" destination="wcl-oE-t80" id="YKG-7U-hO7"/>
                     </connections>
                 </viewController>

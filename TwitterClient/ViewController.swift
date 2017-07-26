@@ -71,6 +71,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             }
         }
+        
+        if segue.identifier == "profileSegue" {
+            if let destinationController = segue.destination as? ProfileViewController {
+                destinationController.allTweets = self.allTweets
+            }
+        }
     }
 }
 
