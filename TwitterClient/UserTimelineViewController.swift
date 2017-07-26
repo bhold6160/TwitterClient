@@ -13,7 +13,6 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var userTimelineView: UITableView!
     
     var userTimeline: Tweet!
-    
     var allTweets = [Tweet]()
     
     override func viewDidLoad() {
@@ -27,7 +26,6 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
         self.userTimelineView.rowHeight = UITableViewAutomaticDimension
         self.userTimelineView.estimatedRowHeight = 75
         
-        print(API.shared.test)
         API.shared.getTweetsFor(username: userTimeline.user!.screenName, completion: { (userTweets) in
             if let userTweets = userTweets {
                 OperationQueue.main.addOperation {

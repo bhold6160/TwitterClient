@@ -92,14 +92,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tto-yu-QeC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tto-yu-QeC" secondAttribute="trailing" id="8h9-Qb-taO"/>
-                            <constraint firstItem="tto-yu-QeC" firstAttribute="top" secondItem="CKR-O9-por" secondAttribute="top" constant="64" id="FLr-Jk-2GC"/>
+                            <constraint firstItem="tto-yu-QeC" firstAttribute="top" secondItem="CKR-O9-por" secondAttribute="top" id="FLr-Jk-2GC"/>
                             <constraint firstItem="tto-yu-QeC" firstAttribute="leading" secondItem="CKR-O9-por" secondAttribute="leading" id="Uy9-1N-YLO"/>
                             <constraint firstItem="iEB-cH-fQ3" firstAttribute="top" secondItem="tto-yu-QeC" secondAttribute="bottom" id="w2h-KJ-5mE"/>
                         </constraints>
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ml-R9-L5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6578.5" y="-90.5"/>
+            <point key="canvasLocation" x="-6580" y="-91.304347826086968"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="BKv-TC-LqK">
@@ -214,7 +214,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91j-eB-vJI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="78"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GWb-IS-WWd">
                                         <rect key="frame" x="8" y="8" width="60" height="60"/>
@@ -238,17 +238,30 @@
                                     <constraint firstItem="wcl-oE-t80" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="top" constant="47" id="hNE-yX-ECn"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dWt-tH-9vd">
+                                <rect key="frame" x="0.0" y="142" width="375" height="481"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dWt-tH-9vd" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="bottom" id="1c2-7x-JOl"/>
                             <constraint firstAttribute="trailing" secondItem="91j-eB-vJI" secondAttribute="trailing" id="7cb-qn-6HB"/>
                             <constraint firstItem="91j-eB-vJI" firstAttribute="top" secondItem="G4L-cZ-9NK" secondAttribute="bottom" id="EYe-3h-hyH"/>
                             <constraint firstItem="91j-eB-vJI" firstAttribute="leading" secondItem="uKJ-we-e8H" secondAttribute="leading" id="K2U-0T-P45"/>
-                            <constraint firstItem="8uX-8b-xpc" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="bottom" id="uGB-WR-Qh1"/>
+                            <constraint firstItem="dWt-tH-9vd" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="bottom" id="K60-2B-Qsx"/>
+                            <constraint firstAttribute="trailing" secondItem="dWt-tH-9vd" secondAttribute="trailing" id="N3W-xr-MeJ"/>
+                            <constraint firstItem="dWt-tH-9vd" firstAttribute="leading" secondItem="uKJ-we-e8H" secondAttribute="leading" id="Q4k-45-ub5"/>
+                            <constraint firstItem="8uX-8b-xpc" firstAttribute="top" secondItem="dWt-tH-9vd" secondAttribute="bottom" id="RdZ-4H-XgM"/>
+                            <constraint firstItem="dWt-tH-9vd" firstAttribute="leading" secondItem="uKJ-we-e8H" secondAttribute="leading" id="kjE-Up-YO7"/>
+                            <constraint firstItem="8uX-8b-xpc" firstAttribute="top" secondItem="dWt-tH-9vd" secondAttribute="bottom" id="p6P-gw-ztq"/>
+                            <constraint firstAttribute="trailing" secondItem="dWt-tH-9vd" secondAttribute="trailing" id="sWC-TQ-Wkr"/>
+                            <constraint firstItem="8uX-8b-xpc" firstAttribute="top" secondItem="91j-eB-vJI" secondAttribute="bottom" constant="481" id="uGB-WR-Qh1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="userProfileImage" destination="GWb-IS-WWd" id="g58-UQ-7jv"/>
+                        <outlet property="userTweetTable" destination="dWt-tH-9vd" id="dK4-WT-m9R"/>
                         <outlet property="usernameLabel" destination="wcl-oE-t80" id="YKG-7U-hO7"/>
                     </connections>
                 </viewController>

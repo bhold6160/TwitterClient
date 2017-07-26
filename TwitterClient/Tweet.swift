@@ -26,7 +26,6 @@ class Tweet {
             self.retweet_count = numberOfRetweets
             
             let newUser = User(json: userJSON)
-            
             self.user = newUser
             
         } else {
