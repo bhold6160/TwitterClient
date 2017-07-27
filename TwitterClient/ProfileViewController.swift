@@ -30,6 +30,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
                     if let user = self.selectedUser {
                         self.usernameLabel.text = self.selectedUser.name
                         
+                        API.shared.getTweetsFor(username: user.screenName, completion: { (userTweets) in
+                            if let userTweets = userTweets {
+                                OperationQueue.main.addOperation {
+                                    self.allTweets = userTweets
+                                    self.userTweetTable.reloadData()
+                                }
+                            }
+                        })
+                    
                         UIImage.fetchImageWith(urlString: user.profileImageUrl, completion: {
                             (userProfileImage) in
                             self.userProfileImage.layer.cornerRadius = 10
@@ -48,14 +57,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
         self.userTweetTable.rowHeight = UITableViewAutomaticDimension
         self.userTweetTable.estimatedRowHeight = 75
         
-        API.shared.getTweetsFor(username: "bholderman44", completion: { (userTweets) in
-            if let userTweets = userTweets {
-                OperationQueue.main.addOperation {
-                    self.allTweets = userTweets
-                    self.userTweetTable.reloadData()
-                }
-            }
-        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
